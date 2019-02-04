@@ -8,13 +8,13 @@ Python program for supervized clustering of environmental samples
 *contact: alain.franc@inra.fr*    
 
 
-## How it is called   
+## Usage   
 
 
-usage	diagno-syst.py -s <sample> -c <yamlfile> 
+``diagno-syst.py -s <sample> -c <yamlfile>`` 
 
 
-with   
+with```
 
 * -s		string	name of the sample	  
 * -c		string	name of the configuration file (yaml)   
@@ -34,9 +34,9 @@ Builds an inventory by mapping an environmental sample on a reference database, 
 
 ### Input files
 
-* fasfile   : fasta file (NGS) of the environmental sample
-* charfile  : the character file of the references
-* disfile   : the distance file between all queries and all references, sparse format
+* ``fasfile``   : fasta file (NGS) of the environmental sample
+* ``charfile``  : the character file of the references
+* ``disfile``   : the distance file between all queries and all references, sparse format
 
 ### Parameters
 
