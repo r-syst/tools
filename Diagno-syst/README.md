@@ -16,8 +16,8 @@ Python program for supervized clustering of environmental samples
 
 with```
 
-* -s		string	name of the sample	  
-* -c		string	name of the configuration file (yaml)   
+* ``-s``	string	name of the sample	  
+* ``-c``	string	name of the configuration file (yaml)   
 
 
 ### What it does
@@ -40,18 +40,17 @@ Builds an inventory by mapping an environmental sample on a reference database, 
 
 ### Parameters
 
-* charname  : taxonomic level on which to label queries (a header of the character file)
-* gap_max   : upper limit for barcoding gap
-* tab       : if True, the array of inventories, one gap per column, is written
-* inventory : if True, the inventory derived from <Tab> is written (largest nb of reads per column)
-* sort      : if True, taxa in inventory sorted in decreasing order of nb of reads
-* stacks    : if True, the stacks per taxon will be written in a file per taxon in <stacks_taxon.fas>
+* ``charname``  : taxonomic level on which to label queries (a header of the character file)
+* ``gap_max``   : upper limit for barcoding gap
+* ``tab``       : if True, the array of inventories, one gap per column, is written
+* ``inventory`` : if True, the inventory derived from <Tab> is written (largest nb of reads per column)
+* ``sort``      : if True, taxa in inventory sorted in decreasing order of nb of reads
+* ``stacks``    : if True, the stacks per taxon will be written in a file per taxon in <stacks_taxon.fas>
 
 ### Output files
 
-* rep       : directory where to write the output files   
-              the names of the output files are automatically generated   
-              and written or not according to the values of   
+* ``rep``       : directory where to write the output files   
+              the names of the output files are automatically generated, and written or not according to the values of   
                 @ tab           the array of inventories, one gap per column,   
                 @ inventory     the inventory derived from <Tab>    
                 @ stacks        the stacks query reads per taxon, a file per taxon   
