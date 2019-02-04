@@ -14,7 +14,7 @@ Python program for supervized clustering of environmental samples
 ``diagno-syst.py -s <sample> -c <yamlfile>`` 
 
 
-with```
+with  
 
 * ``-s``	string	name of the sample	  
 * ``-c``	string	name of the configuration file (yaml)   
@@ -27,7 +27,7 @@ Builds an inventory by mapping an environmental sample on a reference database, 
 ### recommended pratice
 
 * put diagno-syst.py in bin directory
-* start the programm from directory (which can be named) /src of the project where the yaml config file should be
+* start the programm from directory (which can be named /src) of the project where the yaml config file should be
 
 
 ## What is read from configuration file
@@ -78,27 +78,29 @@ Builds an inventory by mapping an environmental sample on a reference database, 
     ref_taxa    the taxa of column <charname> in character file   
     ref_id      the corresponding reference seq_id   
 
-2 - loads the distance file, built by mpi_disseq, sparse format, asDistance file is in a sparse format    
-    an array <Dis> with three columns   
+2 - loads the distance file, built by mpi_disseq, sparse format, as an array <Dis> with three columns   
     - first     : queries   : query id   
     - second    : ref       : reference id   
     - third     : dis       : distance between both   
 
-3 - annotates and builds the inventory   
-    pl_inv  : a list of inventories, one per gap   
-                each inventory is a dictionary   
-                with    keys    : the taxons in reference   
-                        values  : the number of reads with this annotation, for this gap   
+3 - annotates and builds the inventory    
+  
+    pl_inv  = []    : a list of inventories, one per gap   
+                      each inventory is a dictionary   
+                      with    keys    : the taxons in reference   
+                              values  : the number of reads with this annotation, for this gap   
 
     query_annot = {}    dictionary with annotations   
                         keys    : queries (see [2])   
                         values  : a taxon if any, or "unclassified"    
 
 4 - Organizes the inventories as a table   
+
     Res is a table with   
-        row         : taxa    
-        colums      : gaps   
-        Res[i,j]    : the number of reads of taxon <i> for gap <j>   
+    * row         : taxa    
+    * colums      : gaps   
+    * Res[i,j]    : the number of reads of taxon <i> for gap <j>   
+    
     if Tab == True   
         Res is written as <rep_fulldiagno.txt>   
 
