@@ -408,6 +408,7 @@ for gap in range(1+gap_max):
 # if a resfile, writes Res as this file
 if tab:
     resfile = rep + "inventories/" + sample  + "_inventory_per_gap.txt"
+    os.makedirs(rep + 'inventories', exist_ok=True)
     with open(resfile, "w") as out_handle:
         gaps    = ["gap_"+str(i) for i in range(1+gap_max)]
         headers = ["Taxon"] + gaps
@@ -442,11 +443,13 @@ for a, item in enumerate(taxa):
 
 # if inventory, writes the inventory in file inventory
 if inventory:
-	inventoryfile   = rep + "inventories/" + sample + "_inventory.txt"
+	os.makedirs('../inventories',exist_ok=True)
+	inventoryfile   = "../inventories/" + sample + ".inv"
 	with open(inventoryfile, "w") as out_handle:
 		headers = ["Taxon", "Nb"]
 		item    = "\t".join(headers)
 		out_handle.write(item + '\n')
+		print('TAXA', taxa)
 		for a, item in enumerate(taxa):
 			if item not in ['ambiguous','unclassified']:
 				row     = [item, str(nb_reads[a])]
