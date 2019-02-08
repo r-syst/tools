@@ -31,16 +31,24 @@ Builds an inventory by mapping an environmental sample on a reference database, 
 * matplotlib
 * yaml   
 
-The installation is given here for Linux Ubuntu. Once you have installed python 3.6 or higher
+The installation is given here for Linux. Once you have installed python 3.6 or higher
 * ``pip install numpy``
 * ``pip install matplotlib``
 * ``pip install pyyaml``    
 
 
-There are other possibilities, like installing Anacoda, which includes numpy and matplotlib, but not yaml.   
+There are other possibilities, like installing Anaconda, which includes numpy and matplotlib, but not yaml.    
 
-To install ``diagno-syst.py``, 
+
+Running ``diagno-syst.py`` requires that the following files are available:
+* a distance file (distance between queres and references, computed beforehand)
+* a parameter file, specifying the input files, outpufiles, and selected options(all options and files in one single file)
+* a reference database, containing a taxonomic annotation of the reference sequences used for distances.   
+
+
+To install ``diagno-syst.py``, and the files used in the example (a distance file, a parameter file, a reference database)
 * type ``git clone https://github.com/r-syst/tools.git``
+This will install all tools (not only ``diagno-syst``), with one directory per tool. This creates a directory ``tools`` where you are, and a subdirectory ``diagno-syst`` within ``tools``. Then, go into this subdirectory by
 * ``cd tools/diagno-syst``   
 
 and you are in the directory where the program and the data for running the examples are located. To get the data, you have to uncompress them. For this
