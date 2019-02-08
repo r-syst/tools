@@ -288,13 +288,13 @@ sample 	= opts.sample
 param   = yaml.load(open(config))
 
 project     = param['project'] ; print("project directory is", project)
-rep         = param['rep'] + project ; print("")
+#rep         = param['rep'] + project ; print("")
 if param['fasfile'] !="None":
 	fasfile     = rep + param['fasfile']  + sample + '.fas'
 else:
 	fasfile=None	
-disfile     = rep + param['disrep']  + sample + param['dis_suffix']
-charfile    = rep + param['charfile']
+disfile     = project + sample + param['dis_suffix']
+charfile    = project + param['charfile']
 charname    = param['charname']
 gap_max     = param['gap_max']      # maximal gap (estimated: 3% of the length)
 sort        = param['sort']      # taxa in inventory sorted in decreasing order
@@ -302,7 +302,6 @@ tab         = param['tab']    # table of inventories for all gaps
 inventory   = param['inventory']    # writes the inventory on the disk
 stacks      = param['stacks']
 
-#raw_input()
 # ----------------------------------------------------------------------
 
 
@@ -406,9 +405,9 @@ for gap in range(1+gap_max):
 
 
 # if a resfile, writes Res as this file
+os.makedirs(project + 'inventories', exist_ok=True)
 if tab:
-    resfile = rep + "inventories/" + sample  + "_inventory_per_gap.txt"
-    os.makedirs(rep + 'inventories', exist_ok=True)
+    resfile = project + "inventories/" + sample  + "_inventory_per_gap.txt"
     with open(resfile, "w") as out_handle:
         gaps    = ["gap_"+str(i) for i in range(1+gap_max)]
         headers = ["Taxon"] + gaps
@@ -443,8 +442,8 @@ for a, item in enumerate(taxa):
 
 # if inventory, writes the inventory in file inventory
 if inventory:
-	os.makedirs('../inventories',exist_ok=True)
-	inventoryfile   = "../inventories/" + sample + ".inv"
+	#os.makedirs('inventories',exist_ok=True)
+	inventoryfile   = project + "inventories/" + sample + ".inv"
 	with open(inventoryfile, "w") as out_handle:
 		headers = ["Taxon", "Nb"]
 		item    = "\t".join(headers)

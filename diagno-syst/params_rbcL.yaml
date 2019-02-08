@@ -2,18 +2,16 @@
 # this is given as variable <rep> (it could be <PATH>)
 # 
 
+# directory where the roject lives
 project: "./"
 
-
-# Directory where the project lives
-rep: "./"
 
 # fasta file of the query sample
 fasfile: None
 
 # distance file of queries x references (from mpi-disseq)
-disrep:    './'
-disfile : "datasets_2018/"
+#disrep:    './'
+#disfile : "datasets_2018/"
 dis_suffix: "_dissw.txt"
 
 # character file of the references
