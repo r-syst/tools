@@ -37,10 +37,22 @@ The installation is given here for Linux Ubuntu. Once you have installed python 
 * ``pip install pyyaml``    
 
 
-There are other possibilities, like installing Anacoda, which includes numpy and matplotlib, but not yaml.
+There are other possibilities, like installing Anacoda, which includes numpy and matplotlib, but not yaml.   
+
+To install ``diagno-syst.py``, 
+* type ``git clone https://github.com/r-syst/tools.git``
+* ``cd tools/diagno-syst``   
+
+and you are in the directory where the program and the data for running the examples are located. To get the data, you have to uncompress them. For this
+* type ``bunzip2 SN1-55_027_dissw.txt.bz2``
+* type ``chmod +x diagno-syst.py`` (just to be sure ...) 
+
 
 
 ### Quick start on an example
+
+After installaton as above, type
+* ``./diagno-syst.py -c params_rbcL.yaml -s SN1-55_027``
 
 
 
