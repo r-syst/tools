@@ -48,7 +48,8 @@ Running ``diagno-syst.py`` requires that the following files are available:
 
 To install ``diagno-syst.py``, and the files used in the example (a distance file, a parameter file, a reference database)
 * type ``git clone https://github.com/r-syst/tools.git``
-This will install all tools (not only ``diagno-syst``), with one directory per tool. This creates a directory ``tools`` where you are, and a subdirectory ``diagno-syst`` within ``tools``. Then, go into this subdirectory by
+This will install all tools (not only ``diagno-syst``), with one directory per tool. This creates a directory ``tools`` where you are, and a subdirectory ``diagno-syst`` 
+within ``tools``. Then, go into this subdirectory by
 * ``cd tools/diagno-syst``   
 
 and you are in the directory where the program and the data for running the examples are located. To get the data, you have to uncompress them. For this
@@ -60,7 +61,12 @@ and you are in the directory where the program and the data for running the exam
 ### Quick start on an example
 
 After installaton as above, type
-* ``./diagno-syst.py -c params_rbcL.yaml -s SN1-55_027``
+* ``./diagno-syst.py -c params_rbcL.yaml -s SN1-55_027``   
+
+
+This creates a subdirectory ``inventories`` in directory ``diagno-syst``, and (according to the parameters in configuraton file) two inventories:
+* one oer gap
+* one synthetic over all selected gaps
 
 
 
@@ -81,13 +87,6 @@ After installaton as above, type
 * ``sort``      : if True, taxa in inventory sorted in decreasing order of nb of reads
 * ``stacks``    : if True, the stacks per taxon will be written in a file per taxon in <stacks_taxon.fas>
 
-### Output files
-
-* ``rep``       : directory where to write the output files   
-              the names of the output files are automatically generated, and written or not according to the values of   
-                @ tab           the array of inventories, one gap per column,   
-                @ inventory     the inventory derived from <Tab>    
-                @ stacks        the stacks query reads per taxon, a file per taxon   
 
 ## Notes
 
@@ -95,8 +94,8 @@ After installaton as above, type
 ### How it proceeds:
 
 0 - loads the fasta file   
-1 - loads the character file, and builds   
-2 - loads the distance file, built by mpi_disseq, sparse format, asDistance file is in a sparse format    
+1 - loads the character file   
+2 - loads the distance file, built by mpi_disseq, sparse format
 3 - annotates and builds the inventory   
 4 - Organizes the inventories as a table   
 5 - Reduce phase: a single inventory   
