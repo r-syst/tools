@@ -41,30 +41,32 @@ There are other possibilities, like installing Anaconda, which includes numpy an
 
 
 Running ``diagno-syst.py`` requires that the following files are available:
-* a distance file (distance between queres and references, computed beforehand)
-* a parameter file, specifying the input files, outpufiles, and selected options(all options and files in one single file)
+* a distance file (distance between queries and references, computed beforehand)
+* a parameter file, specifying the input files, output files, and selected options(all options and files in one single file)
 * a reference database, containing a taxonomic annotation of the reference sequences used for distances.   
 
 
 To install ``diagno-syst.py``, and the files used in the example (a distance file, a parameter file, a reference database)
 * type ``git clone https://github.com/r-syst/tools.git``
-This will install all tools (not only ``diagno-syst``), with one directory per tool. This creates a directory ``tools`` where you are, and a subdirectory ``diagno-syst`` 
+This will install all tools (not only ``diagno-syst``), with one directory per tool. This creates a subdirectory ``tools`` where you are, and a subdirectory ``diagno-syst`` 
 within ``tools``. Then, go into this subdirectory by
 * ``cd tools/diagno-syst``   
 
-and you are in the directory where the program and the data for running the examples are located. To get the data, you have to uncompress them. For this
+and you are in the directory where the program and the data for running the examples are located. To get all the data, you have to uncompress the distance file. For this
 * type ``bunzip2 SN1-55_027_dissw.txt.bz2``
-* type ``chmod +x diagno-syst.py`` (just to be sure ...) 
+* type ``chmod +x diagno-syst.py`` (just to be sure ...)   
+
+You are now ready to run the example.
 
 
 
 ### Quick start on an example
 
-After installaton as above, type
+After installaton as above, type in  terminal in ``[...]/tools/diagno-syst$``
 * ``./diagno-syst.py -c params_rbcL.yaml -s SN1-55_027``   
 
 
-This creates a subdirectory ``inventories`` in directory ``diagno-syst``, and (according to the parameters in configuraton file) two inventories:
+This creates a subdirectory ``inventories`` in directory ``diagno-syst``, and (according to the parameters in configuraton file) writes two inventories:
 * one oer gap
 * one synthetic over all selected gaps
 
