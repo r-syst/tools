@@ -24,10 +24,24 @@ with
 
 Builds an inventory by mapping an environmental sample on a reference database, by supervized clustering   
 
-### recommended pratice
+### Quick install
 
-* put diagno-syst.py in bin directory
-* start the programm from directory (which can be named /src) of the project where the yaml config file should be
+``diagon-syst.py`` is a stand alone python program which requires some python dependencies:
+* numpy
+* matplotlib
+* yaml   
+
+The installation is given here for Linux Ubuntu. Once you have installed python 3.6 or higher
+* ``pip install numpy``
+* ``pip install matplotlib``
+* ``pip install pyyaml``    
+
+
+There are other possibilities, like installing Anacoda, which includes numpy and matplotlib, but not yaml.
+
+
+### Quick start on an example
+
 
 
 ## What is read from configuration file
