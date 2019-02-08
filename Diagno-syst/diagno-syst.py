@@ -288,7 +288,7 @@ sample 	= opts.sample
 param   = yaml.load(open(config))
 
 project     = param['project'] ; print("project directory is", project)
-rep         = param['rep'] + project
+rep         = param['rep'] + project ; print("")
 if param['fasfile'] !="None":
 	fasfile     = rep + param['fasfile']  + sample + '.fas'
 else:
