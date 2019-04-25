@@ -26,7 +26,7 @@ Builds an inventory by mapping an environmental sample on a reference database, 
 
 ### Quick install
 
-``diagon-syst.py`` is a stand alone python program which requires some python dependencies:
+``diago-syst.py`` is a stand alone python program which requires some python dependencies:
 * numpy
 * matplotlib
 * yaml   
@@ -67,12 +67,14 @@ After installaton as above, type in  terminal in ``[...]/tools/diagno-syst$``
 
 
 This creates a subdirectory ``inventories`` in directory ``diagno-syst``, and (according to the parameters in configuraton file) writes two inventories:
-* one oer gap
+* one per gap
 * one synthetic over all selected gaps
 
 
 
 ## What is read from configuration file
+
+All the information needed for `diagno-syst`` to run is given as fields (keys, values)  of a ``yaml`` configuration file, as follows:   
 
 ### Input files
 
