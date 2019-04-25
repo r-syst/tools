@@ -74,7 +74,7 @@ This creates a subdirectory ``inventories`` in directory ``diagno-syst``, and (a
 
 ## What is read from configuration file
 
-All the information needed for `diagno-syst`` to run is given as fields (keys, values)  of a ``yaml`` configuration file, as follows:   
+All the information needed for ``diagno-syst`` to run is given as fields (keys, values)  of a ``yaml`` configuration file, as follows:   
 
 ### Input files
 
